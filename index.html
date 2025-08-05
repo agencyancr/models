@@ -1,217 +1,975 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="uk-UA">
 <head>
-  <meta charset="UTF-8">
-  <title>Онлайн-співпраця</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* ... (твої стилі без змін) ... */
-    body { font-family: system-ui, Arial, sans-serif; max-width: 400px; margin: 30px auto; background: #fafbfc; color: #202020;}
-    .card { background: #fff; padding: 32px 24px; border-radius: 16px; box-shadow: 0 2px 16px #0001;}
-    h1, h2 { font-size: 1.2em; margin-top: 0; }
-    button { margin: 12px 0; padding: 12px 18px; font-size: 1em; border-radius: 8px; border: none; background: #3B82F6; color: #fff; cursor: pointer; display: inline-flex; align-items: center;}
-    button:hover { background: #2563EB; }
-    .small { font-size: 0.95em; color: #616161; margin-bottom: 8px; }
-    .hidden { display: none; }
-    .tg-btn {background:#27A6E5;}
-    .tg-btn:hover {background:#1886bc;}
-    .tg-icon {width: 1.3em; height: 1.3em; margin-right: 8px; vertical-align: middle; display: inline-block;}
-    .step-indicator { margin-bottom: 12px; font-size: 1.05em; font-weight: 500; }
-    .progress-bar-bg {
-      width: 100%; height: 8px; background: #e0e7ef; border-radius: 6px; margin-bottom: 22px;
-      overflow: hidden;
-    }
-    .progress-bar-fg {
-      height: 100%; background: #3B82F6; width: 0%; border-radius: 6px; transition: width 0.5s cubic-bezier(.4,1.7,.5,.7);
-    }
-    .footer {
-      margin: 36px 0 12px 0; padding: 24px 0 0 0; text-align: center; font-size: 0.9em; color: #8a8a8a; border-top: 1px solid #ececec;
-    }
-    .footer a { color: #3B82F6; text-decoration: none; margin: 0 6px; }
-    .footer a:hover { text-decoration: underline; }
-    .policy, .terms {display:none; text-align:left; background:#fff; padding:32px 24px; border-radius:16px; box-shadow:0 2px 16px #0001; max-width: 400px; margin: 30px auto;}
-    .policy h2, .terms h2 {margin-top:0;}
-  </style>
- <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '9608854662549078');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=9608854662549078&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Ancrush Models</title>
+    <meta name="description" content="Ми допомагаємо моделям перетворити профіль у пасивний дохід від 500$. Професійне оформлення, менеджмент акаунта, монетизація.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ancrush Models">
+    <meta property="og:description" content="Ми допомагаємо моделям перетворити профіль у пасивний дохід від 500$. Професійне оформлення, менеджмент акаунта, монетизація.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./profile.jpg">
+    
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./logo.png">
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // Initialize Meta Pixel - Replace YOUR_PIXEL_ID with your actual pixel ID
+    // fbq('init', 'YOUR_PIXEL_ID');
+    // fbq('track', 'PageView');
+    </script>
+    <noscript>
+    <!-- Replace YOUR_PIXEL_ID with your actual pixel ID -->
+    <!-- <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" /> -->
+    </noscript>
+    <!-- End Meta Pixel Code -->
+    
+    <style>
+        /* Reset and base styles */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            padding: 0;
+            margin: 0;
+            font-size: 18px;
+            font-family: 'Comfortaa', cursive;
+            line-height: 140%;
+            color: #ffffff;
+        }
+        
+        /* CSS Variables */
+        :root {
+            --page-background-color: #111d27;
+            --content-background-color: rgba(255, 255, 255, 0);
+            --text-color: #ffffff;
+            --primary-color: #ffffff;
+            --secondary-color: #5c2c97;
+            --primary-button-background: #ffffff;
+            --primary-button-color: #111d27;
+            --secondary-button-background: #5c2c97;
+            --secondary-button-color: #ffffff;
+        }
+        
+        /* Main layout */
+        .main-container {
+            background: var(--page-background-color);
+            position: relative;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .main-container::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            background: url('./background.jpg');
+            background-size: auto;
+            background-repeat: no-repeat;
+            background-position: top center;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        
+        /* Sections */
+        .section {
+            margin: 0;
+        }
+        
+        .section-with-bg {
+            background: var(--content-background-color);
+            padding: 20px 40px;
+            border-radius: 15px;
+            margin: 0;
+        }
+        
+        .section-white {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 0;
+        }
+        
+        /* White sections without gaps */
+        .section-white-no-gap {
+            background: #ffffff;
+            padding: 30px;
+            margin: 0;
+            border-radius: 0;
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            line-height: 120%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h2 {
+            font-size: 36px;
+            font-weight: bold;
+            line-height: 120%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h3 {
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 120%;
+            margin: 0;
+            padding: 0;
+            color: #111d27;
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 140%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-dark {
+            color: #111d27;
+        }
+        
+        .text-purple {
+            color: #5c2c97;
+        }
+        
+        .text-small {
+            font-size: 16px;
+        }
+        
+        .text-xs {
+            font-size: 12px;
+        }
+        
+        .highlight-list {
+            margin: 10px 0;
+        }
+        
+        .highlight-list p {
+            font-size: 20px;
+            margin: 4px 0;
+            color: var(--text-color);
+            line-height: 1.3;
+            font-weight: bold;
+        }
+        
+        /* Quiz Modal */
+        .quiz-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+        
+        .quiz-content {
+            background-color: #ffffff;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .quiz-question {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        .quiz-question.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .quiz-title {
+            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .quiz-description {
+            color: #333333;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+        
+        .quiz-question-text {
+            color: #333333;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .quiz-counter {
+            color: #666666;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .quiz-option {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #333333;
+        }
+        
+        .quiz-option:hover {
+            background: var(--content-background-color);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .quiz-option.selected {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+        
+        .quiz-progress {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .quiz-progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .quiz-progress-dot.active {
+            background: var(--primary-color);
+        }
+        
+        .quiz-progress-dot.completed {
+            background: var(--secondary-color);
+        }
+        
+
+        
+        .quiz-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #999;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+        
+        .quiz-close:hover {
+            color: #333;
+        }
+        
+        @media (max-width: 768px) {
+            .quiz-content {
+                margin: 10% auto;
+                padding: 20px;
+                width: 95%;
+            }
+            
+            .quiz-title {
+                font-size: 20px;
+            }
+            
+            .quiz-question-text {
+                font-size: 18px;
+            }
+        }
+        
+        /* Images */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .logo-container {
+            background: var(--content-background-color);
+            padding: 0 50px;
+            text-align: center;
+        }
+        
+        .logo-container img {
+            max-width: 50%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 120%;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            border: none;
+            font-family: inherit;
+        }
+        
+        /* Large CTA Button */
+        .btn-large {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 120%;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            border: none;
+            font-family: inherit;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .btn:hover {
+            opacity: 0.8;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: var(--primary-button-background);
+            color: var(--primary-button-color);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary-button-background);
+            color: var(--secondary-button-color);
+        }
+        
+        .btn-icon {
+            margin-right: 16px;
+        }
+        
+        .btn-icon svg {
+            width: 16px;
+            height: 16px;
+        }
+        
+        .btn-icon svg path {
+            fill: currentColor;
+        }
+        
+        .btn-center {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .btn-center-no-margin {
+            text-align: center;
+            margin: 0;
+        }
+        
+        .btn-center-bottom-spacing {
+            text-align: center;
+            margin: 0 0 30px 0;
+        }
+        
+        /* Divider */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: var(--secondary-color);
+            margin: 30px 0;
+        }
+        
+        /* Image divider for white sections */
+        .divider-image {
+            text-align: center;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .divider-image img {
+            max-width: 100px;
+            height: auto;
+            width: auto;
+            display: block;
+        }
+        
+        /* Spacing */
+        .spacer-small {
+            height: 20px;
+        }
+        
+        .spacer-medium {
+            height: 60px;
+        }
+        
+        .spacer-large {
+            height: 60px;
+        }
+        
+        /* No padding sections */
+        .section-no-padding {
+            background: var(--content-background-color);
+            margin: 0;
+            padding: 15px 30px;
+            border-radius: 0;
+        }
+        
+        .section-transparent {
+            background: rgba(255, 255, 255, 0);
+            margin: 0;
+            padding: 0;
+            border-radius: 0;
+        }
+        
+        /* Features highlight */
+        .highlight-text {
+            background: var(--content-background-color);
+            padding: 30px;
+            border-radius: 0;
+            text-align: center;
+        }
+        
+        /* Quote styles */
+        .quote-divider {
+            text-align: center;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .quote-divider img {
+            max-width: 100px;
+            height: auto;
+            width: auto;
+            display: block;
+        }
+        
+        /* Contact info */
+        .contact-info {
+            background: rgba(255, 255, 255, 0);
+            padding: 40px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        /* Reviews section */
+        .reviews-header {
+            background: var(--page-background-color);
+            padding: 40px 40px 20px 40px;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+        }
+        
+        .review-item {
+            background: var(--page-background-color);
+            padding: 30px 40px;
+            margin: 0;
+            text-align: center;
+        }
+        
+        .review-item em {
+            font-style: italic;
+            line-height: 140%;
+        }
+        
+        .review-author {
+            margin-top: 15px;
+            font-size: 16px;
+        }
+        
+        .review-years {
+            font-size: 12px;
+            color: #ccc;
+        }
+        
+        /* Final CTA section */
+        .final-cta {
+            background: rgba(255, 255, 255, 0);
+            padding: 0 40px;
+            border-radius: 0 0 6px 6px;
+            text-align: center;
+        }
+        
+        /* CTA with image section */
+        .cta-with-image {
+            background: rgba(255, 255, 255, 0);
+            padding: 40px;
+            border-radius: 6px 6px 0 0;
+            text-align: center;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 10px;
+            }
+            
+            .section-with-bg,
+            .section-white {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            h3 {
+                font-size: 20px;
+            }
+            
+            .logo-container {
+                padding: 30px 0;
+            }
+            
+            .btn {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="card" id="main-content">
-    <!-- Крок 1 -->
-    <div id="step-1">
-      <div class="step-indicator"><span id="step-number">1</span>/3</div>
-      <div class="progress-bar-bg">
-        <div id="progress-bar" class="progress-bar-fg" style="width:33%"></div>
-      </div>
-      <h1>Дякуємо за інтерес до нашої команди.</h1>
-      <p>Перш за все три коротких запитання:</p>
-      <div class="small">Скільки тобі років?</div>
-      <button onclick="nextAge(0)">До 18</button>
-      <button onclick="nextAge(1)">18-30</button>
-      <button onclick="nextAge(2)">35+</button>
+    <div class="main-container">
+        <div class="content-wrapper">
+            <!-- Spacer -->
+            <div class="spacer-small"></div>
+            
+            <!-- Spacer -->
+            <div class="spacer-large"></div>
+            
+            <!-- Logo Section -->
+            <div class="logo-container">
+                <img src="./logo.png" alt="Логотип" />
+            </div>
+            
+            <!-- Highlight Section -->
+            <div class="section-no-padding text-center">
+                <div class="highlight-list">
+                    <p><strong>❌ Не Онлік</strong></p>
+                    <p><strong>🚫 Без Інтиму</strong></p>
+                    <p><strong>💸 Без вкладень</strong></p>
+                </div>
+            </div>
+            
+            <!-- Main Hero Section -->
+            <div class="section-with-bg text-center">
+                <p>Ми допомагаємо нашим моделям перетворити профіль у пасивний дохід від 500$</p>
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="section-transparent">
+                <div class="btn-center-bottom-spacing">
+                <button onclick="openQuiz()" class="btn-large btn-secondary">
+                    <span class="btn-icon" style="margin-right: 15px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 42 42" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.9729 4.10811C24.4509 -0.369875 31.7112 -0.369875 36.1892 4.10811C40.6672 8.5861 40.6672 15.8463 36.1892 20.3243L30.7838 25.7297C26.3058 30.2077 19.0455 30.2077 14.5675 25.7297L13.8919 25.0541C13.1455 24.3077 13.1455 23.0977 13.8919 22.3514C14.6382 21.605 15.8482 21.605 16.5946 22.3514L17.2702 23.027C20.2556 26.0124 25.0957 26.0124 28.0811 23.027L33.4865 17.6216C36.4718 14.6363 36.4718 9.79614 33.4865 6.81081C30.5011 3.82549 25.661 3.82549 22.6756 6.81081L19.2973 10.1892C18.5509 10.9355 17.3409 10.9355 16.5946 10.1892C15.8482 9.44286 15.8482 8.23282 16.5946 7.48649L19.9729 4.10811Z" fill="currentColor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M24.0275 18.9729C21.0422 15.9876 16.202 15.9876 13.2167 18.9729L7.81126 24.3783C4.82593 27.3637 4.82593 32.2038 7.81126 35.1891C10.7966 38.1745 15.6367 38.1745 18.6221 35.1891L22.0004 31.8108C22.7468 31-0644 23.9568 31.0644 24.7032 31.8108C25.4495 32.5571 25.4495 33.7671 24.7032 34.5135L21.3248 37.8918C16.8468 42.3698 9.58654 42.3698 5.10855 37.8918C0.630567 33.4139 0.630567 26.1536 5.10855 21.6756L10.514 16.2702C14.9919 11.7922 22.2522 11.7922 26.7302 16.2702L27.4059 16.9459C28.1522 17.6922 28.1522 18.9023 27.4059 19.6486C26.6595 20.3949 25.4495 20.3949 24.7032 19.6486L24.0275 18.9729Z" fill="currentColor"></path>
+                        </svg>
+                    </span>
+                    Звʼязатись з менеджером
+                </button>
+                </div>
+            </div>
+            
+            <!-- Profile Image -->
+            <div class="section-white-no-gap" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                <div class="image-container">
+                    <img src="./profile.jpg" alt="Профіль" />
+                </div>
+            </div>
+            
+            <!-- Feature 1 -->
+            <div class="section-white-no-gap text-center">
+                <h3>Створення привабливого профілю</h3>
+                <p class="text-dark">Професійне оформлення, якісний контент, унікальний стиль.</p>
+            </div>
+            
+            <!-- Divider -->
+            <div class="section-white-no-gap">
+                <div class="divider"></div>
+            </div>
+            
+            <!-- Team Image -->
+            <div class="section-white-no-gap">
+                <div class="image-container">
+                    <img src="./team.png" alt="Команда" />
+                </div>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="section-white-no-gap text-center">
+                <h3>Менеджмент акаунта</h3>
+                <p class="text-dark">Ведення сторінки, таргетинг, постійна активність та залучення фанів.</p>
+            </div>
+            
+            <!-- Divider -->
+            <div class="section-white-no-gap">
+                <div class="divider"></div>
+            </div>
+            
+            <!-- Gifts Image -->
+            <div class="section-white-no-gap">
+                <div class="image-container">
+                    <img src="./gifts.png" alt="Подарунки" />
+                </div>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="section-white-no-gap text-center">
+                <h3>Набір прихильників і монетизація</h3>
+                <p class="text-dark">Партнерські програми, подарунки та додаткові джерела прибутку</p>
+            </div>
+            
+            <!-- Questions Section -->
+            <div class="section-white-no-gap text-center" style="border-radius: 0 0 20px 20px;">
+                <h1 style="color: #000000; font-size: 20px;">Залишились запитання?</h1>
+                <div class="btn-center" style="margin-top: 20px;">
+                <button onclick="openQuiz()" class="btn-large btn-secondary">
+                    <span class="btn-icon" style="margin-right: 15px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 42 42" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.9729 4.10811C24.4509 -0.369875 31.7112 -0.369875 36.1892 4.10811C40.6672 8.5861 40.6672 15.8463 36.1892 20.3243L30.7838 25.7297C26.3058 30.2077 19.0455 30.2077 14.5675 25.7297L13.8919 25.0541C13.1455 24.3077 13.1455 23.0977 13.8919 22.3514C14.6382 21.605 15.8482 21.605 16.5946 22.3514L17.2702 23.027C20.2556 26.0124 25.0957 26.0124 28.0811 23.027L33.4865 17.6216C36.4718 14.6363 36.4718 9.79614 33.4865 6.81081C30.5011 3.82549 25.661 3.82549 22.6756 6.81081L19.2973 10.1892C18.5509 10.9355 17.3409 10.9355 16.5946 10.1892C15.8482 9.44286 15.8482 8.23282 16.5946 7.48649L19.9729 4.10811Z" fill="currentColor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M24.0275 18.9729C21.0422 15.9876 16.202 15.9876 13.2167 18.9729L7.81126 24.3783C4.82593 27.3637 4.82593 32.2038 7.81126 35.1891C10.7966 38.1745 15.6367 38.1745 18.6221 35.1891L22.0004 31.8108C22.7468 31.0644 23.9568 31.0644 24.7032 31.8108C25.4495 32.5571 25.4495 33.7671 24.7032 34.5135L21.3248 37.8918C16.8468 42.3698 9.58654 42.3698 5.10855 37.8918C0.630567 33.4139 0.630567 26.1536 5.10855 21.6756L10.514 16.2702C14.9919 11.7922 22.2522 11.7922 26.7302 16.2702L27.4059 16.9459C28.1522 17.6922 28.1522 18.9023 27.4059 19.6486C26.6595 20.3949 25.4495 20.3949 24.7032 19.6486L24.0275 18.9729Z" fill="currentColor"></path>
+                        </svg>
+                    </span>
+                    Звʼязатись з менеджером
+                </button>
+                </div>
+            </div>
+            
+            <!-- Spacer -->
+            <div class="spacer-large"></div>
+            
+            <!-- Reviews Section -->
+            <div class="reviews-header">
+                <h2>Відгуки Моделей</h2>
+            </div>
+            
+            <!-- Review 1 -->
+            <div class="review-item">
+                <div class="quote-divider">
+                    <img src="./divider.png" alt="Роздільник" />
+                </div>
+                <p><em>Ніколи не думала, що вести профіль може бути так легко. Агенція взяла на себе все і залишили мені лише приємний дохід</em></p>
+                <p class="review-author">- Анна, 21 рік<br><span class="review-years">3 роки з нами</span></p>
+            </div>
+            
+            <!-- Review 2 -->
+            <div class="review-item">
+                <div class="quote-divider">
+                    <img src="./divider.png" alt="Роздільник" />
+                </div>
+                <p><em>До цього мій профіль виглядав пусто і не привертав уваги. Агенція допомогла правильно його налаштувати, тепер отримую набагато більше уваги та подарунків від шанувальників</em></p>
+                <p class="review-author">- Євгенія, 54 роки<br><span class="review-years">1 рік з нами</span></p>
+            </div>
+            
+            <!-- Review 3 -->
+            <div class="review-item" style="border-radius: 0 0 20px 20px;">
+                <div class="quote-divider">
+                    <img src="./divider.png" alt="Роздільник" />
+                </div>
+                <p><em>Я боялася, що буде складно вести сторінку, відповідати, підтримувати інтерес. Але вони все взяли на себе, що мені комфортно, а результат – більше знайомств і впевненість у собі</em></p>
+                <p class="review-author">- Дарина, 37 років<br><span class="review-years">5 років з нами</span></p>
+            </div>
+            
+            <!-- Contact Image -->
+            <div class="cta-with-image">
+                <img src="./logo.png" alt="Логотип" style="max-width: 100%; border-radius: 6px;" />
+            </div>
+            
+            <!-- Final CTA -->
+            <div class="final-cta">
+                <p class="text-purple" style="text-transform: uppercase; font-weight: bold; font-size: 14px;">Ми завжди на зв'язку</p>
+                
+                <div class="btn-center">
+                    <button onclick="openQuiz()" class="btn-large btn-secondary">
+                        <span class="btn-icon" style="margin-right: 15px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 42 42" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.9729 4.10811C24.4509 -0.369875 31.7112 -0.369875 36.1892 4.10811C40.6672 8.5861 40.6672 15.8463 36.1892 20.3243L30.7838 25.7297C26.3058 30.2077 19.0455 30.2077 14.5675 25.7297L13.8919 25.0541C13.1455 24.3077 13.1455 23.0977 13.8919 22.3514C14.6382 21.605 15.8482 21.605 16.5946 22.3514L17.2702 23.027C20.2556 26.0124 25.0957 26.0124 28.0811 23.027L33.4865 17.6216C36.4718 14.6363 36.4718 9.79614 33.4865 6.81081C30.5011 3.82549 25.661 3.82549 22.6756 6.81081L19.2973 10.1892C18.5509 10.9355 17.3409 10.9355 16.5946 10.1892C15.8482 9.44286 15.8482 8.23282 16.5946 7.48649L19.9729 4.10811Z" fill="currentColor"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M24.0275 18.9729C21.0422 15.9876 16.202 15.9876 13.2167 18.9729L7.81126 24.3783C4.82593 27.3637 4.82593 32.2038 7.81126 35.1891C10.7966 38.1745 15.6367 38.1745 18.6221 35.1891L22.0004 31.8108C22.7468 31.0644 23.9568 31.0644 24.7032 31.8108C25.4495 32.5571 25.4495 33.7671 24.7032 34.5135L21.3248 37.8918C16.8468 42.3698 9.58654 42.3698 5.10855 37.8918C0.630567 33.4139 0.630567 26.1536 5.10855 21.6756L10.514 16.2702C14.9919 11.7922 22.2522 11.7922 26.7302 16.2702L27.4059 16.9459C28.1522 17.6922 28.1522 18.9023 27.4059 19.6486C26.6595 20.3949 25.4495 20.3949 24.7032 19.6486L24.0275 18.9729Z" fill="currentColor"></path>
+                            </svg>
+                        </span>
+                        Звʼязатись з менеджером
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <p>Телефон:<br>+380509875643</p>
+                <p style="margin-top: 15px;">Email:<br>manager@ancrush.com</p>
+            </div>
+            
+
+        </div>
     </div>
 
-    <!-- Недостатньо років -->
-    <div id="not18" class="hidden">
-      <div class="step-indicator">1/3</div>
-      <div class="progress-bar-bg">
-        <div class="progress-bar-fg" style="width:33%"></div>
-      </div>
-      <p>На жаль, ця можливість лише для повнолітніх.</p>
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="quiz-modal">
+        <div class="quiz-content">
+            <button class="quiz-close" onclick="closeQuiz()">&times;</button>
+            
+            <!-- Question 1 -->
+            <div id="question1" class="quiz-question active">
+                <div class="quiz-counter">Питання 1 з 3</div>
+                <div class="quiz-progress">
+                    <div class="quiz-progress-dot active"></div>
+                    <div class="quiz-progress-dot"></div>
+                    <div class="quiz-progress-dot"></div>
+                </div>
+                <div class="quiz-question-text">Ви раніше співпрацювали з агенціями?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this, 'agencies_yes', 1)">Так</div>
+                    <div class="quiz-option" onclick="selectOption(this, 'agencies_no', 1)">Ні</div>
+                </div>
+            </div>
+            
+            <!-- Question 2 -->
+            <div id="question2" class="quiz-question">
+                <div class="quiz-counter">Питання 2 з 3</div>
+                <div class="quiz-progress">
+                    <div class="quiz-progress-dot completed"></div>
+                    <div class="quiz-progress-dot active"></div>
+                    <div class="quiz-progress-dot"></div>
+                </div>
+                <div class="quiz-question-text">Скільки фото ви готові робити на місяць?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this, 'photos_10_20', 2)">10-20</div>
+                    <div class="quiz-option" onclick="selectOption(this, 'photos_20_50', 2)">20-50</div>
+                    <div class="quiz-option" onclick="selectOption(this, 'photos_50_plus', 2)">50+</div>
+                </div>
+            </div>
+            
+            <!-- Question 3 -->
+            <div id="question3" class="quiz-question">
+                <div class="quiz-counter">Питання 3 з 3</div>
+                <div class="quiz-progress">
+                    <div class="quiz-progress-dot completed"></div>
+                    <div class="quiz-progress-dot completed"></div>
+                    <div class="quiz-progress-dot active"></div>
+                </div>
+                <div class="quiz-question-text">Ви готові записувати короткі лайфстайл відео?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this, 'videos_yes', 3)">Так</div>
+                    <div class="quiz-option" onclick="selectOption(this, 'videos_no', 3)">Ні</div>
+                </div>
+            </div>
+            
+            <!-- Results Screen -->
+            <div id="quizResults" class="quiz-question">
+                <div class="quiz-title">Дякуємо! 🎉</div>
+                <div class="quiz-description">
+                    Ваші відповіді допоможуть нам підготувати персоналізовану пропозицію.<br><br>
+                    Натисніть кнопку нижче, щоб перейти в наш Телеграм та отримати детальну консультацію від менеджера! 💬
+                </div>
+                <div style="margin: 30px 0;">
+                    <div style="font-size: 48px; margin-bottom: 20px;">📱</div>
+                    <div style="font-size: 18px; font-weight: bold; color: var(--primary-color); margin-bottom: 20px;">
+                        Ваш менеджер вже чекає на вас!
+                    </div>
+                </div>
+                <a href="https://t.me/ancrushabot?start=688b4dc00e5a97b0dc0c7855" target="_blank" class="btn-large btn-secondary" onclick="redirectToTelegram()">
+                    <span class="btn-icon" style="margin-right: 15px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 42 42" fill="none">
+                            <path d="M21 0C9.402 0 0 9.402 0 21s9.402 21 21 21 21-9.402 21-21S32.598 0 21 0zM30.956 14.478c-.247 2.613-1.314 9.223-1.857 12.234-.229 1.272-.681 1.699-1.12 1.74-.951.088-1.674-.629-2.593-1.232-1.437-.944-2.249-1.532-3.643-2.453-1.611-1.064-.567-1.649.351-2.606.24-.25 4.415-4.047 4.498-4.394.01-.043.02-.205-.076-.29-.096-.085-.238-.056-.34-.033-.145.033-2.446 1.554-6.904 4.566-.653.448-1.244.667-1.773.656-.583-.012-1.706-.33-2.541-.601-1.024-.333-1.839-.509-1.769-1.074.036-.293.434-.593 1.194-.9 4.68-2.034 7.8-3.375 9.36-4.023 4.466-1.94 5.39-2.277 5.993-2.287.133-.002.43.031.622.187.163.133.208.312.229.439.021.127.047.416.026.642z" fill="currentColor"/>
+                        </svg>
+                    </span>
+                    Перейти в телеграм
+                </a>
+            </div>
+        </div>
     </div>
 
-    <!-- Крок 2 -->
-    <div id="step-2" class="hidden">
-      <div class="step-indicator"><span id="step-number2">2</span>/3</div>
-      <div class="progress-bar-bg">
-        <div id="progress-bar2" class="progress-bar-fg" style="width:66%"></div>
-      </div>
-      <div class="small">Чи маєш ноутбук або комп’ютер для роботи?</div>
-      <button onclick="nextDevice(1)">Так</button>
-      <button onclick="nextDevice(0)">Немає</button>
-    </div>
+    <script>
+        let quizAnswers = {};
+        let currentQuestion = 0;
 
-    <!-- Відсутній пристрій -->
-    <div id="notDevice" class="hidden">
-      <div class="step-indicator">2/3</div>
-      <div class="progress-bar-bg">
-        <div class="progress-bar-fg" style="width:66%"></div>
-      </div>
-      <p>Для онлайн-формату потрібен особистий пристрій.</p>
-    </div>
+        function openQuiz() {
+            // Track Meta Pixel event for quiz start
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'InitiateCheckout');
+            }
+            
+            document.getElementById('quizModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            currentQuestion = 1;
+        }
 
-    <!-- Крок 3 -->
-    <div id="step-3" class="hidden">
-      <div class="step-indicator"><span id="step-number3">3</span>/3</div>
-      <div class="progress-bar-bg">
-        <div class="progress-bar-fg" style="width:100%"></div>
-      </div>
-      <div class="small">Який графік тобі підходить?</div>
-      <button onclick="nextShift(0)">07:00-15:00</button>
-      <button onclick="nextShift(1)">15:00-23:00</button>
-      <button onclick="nextShift(2)">23:00-07:00</button>
-      <button onclick="nextShift(3)">Жоден</button>
-    </div>
+        function closeQuiz() {
+            document.getElementById('quizModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            // Reset quiz state
+            currentQuestion = 0;
+            quizAnswers = {};
+            // Reset all questions to initial state
+            document.querySelectorAll('.quiz-question').forEach(q => q.classList.remove('active'));
+            document.getElementById('question1').classList.add('active');
+            // Reset all selections
+            document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+        }
 
-    <!-- Графік не підходить -->
-    <div id="notShift" class="hidden">
-      <div class="step-indicator">3/3</div>
-      <div class="progress-bar-bg">
-        <div class="progress-bar-fg" style="width:100%"></div>
-      </div>
-      <p>На жаль, наразі інших варіантів немає.</p>
-    </div>
+        function selectOption(element, value, questionNum) {
+            // Remove selected class from all options in current question
+            const options = element.parentNode.querySelectorAll('.quiz-option');
+            options.forEach(option => option.classList.remove('selected'));
+            
+            // Add selected class to clicked option
+            element.classList.add('selected');
+            
+            // Store answer
+            quizAnswers[`question${questionNum}`] = value;
+            
+            // Auto-advance after a short delay for visual feedback
+            setTimeout(() => {
+                if (questionNum < 3) {
+                    nextQuestion(questionNum);
+                } else {
+                    // Last question, show results
+                    showResults();
+                }
+            }, 500); // 500ms delay for visual feedback
+        }
 
-    <!-- Успішне проходження -->
-    <div id="final" class="hidden">
-      <div class="step-indicator">3/3</div>
-      <div class="progress-bar-bg">
-        <div class="progress-bar-fg" style="width:100%"></div>
-      </div>
-      <h2>Дякуємо за відповіді! 🙌</h2>
-      <p>Щоб отримати більше деталей, натисни кнопку нижче.</p>
-      <button class="tg-btn" onclick="toTelegram()">
-        <span class="tg-icon">
-          <!-- SVG іконка Telegram -->
-          <svg viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="12" fill="#fff"/>
-            <path d="M7.89 12.79c-.33.15-.67.28-1 .42-.18.07-.36.14-.5.07-.14-.06-.21-.25-.26-.41-.21-.7-.42-1.41-.63-2.12-.06-.19-.13-.39-.05-.56.09-.17.28-.24.45-.31l8.76-3.21c.28-.1.61-.2.85-.02.25.18.22.54.19.85-.24 2.09-.49 4.18-.73 6.27-.03.23-.08.48-.26.61-.18.13-.41.09-.62.03-1.07-.33-2.13-.67-3.2-1-.21-.07-.45-.13-.57.04-.11.15-.06.39-.04.6.06.45.13.91.19 1.36.01.08.02.17-.04.23-.08.08-.23.03-.33 0-.41-.16-.81-.34-1.22-.5Zm0 0 3.15-2.86" stroke="#27A6E5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        Перейти в Telegram
-      </button>
-    </div>
-  </div>
+        function nextQuestion(questionNum) {
+            const currentQuestionEl = document.getElementById(`question${questionNum}`);
+            const nextQuestionEl = document.getElementById(`question${questionNum + 1}`);
+            
+            if (nextQuestionEl) {
+                currentQuestionEl.classList.remove('active');
+                nextQuestionEl.classList.add('active');
+                currentQuestion = questionNum + 1;
+            }
+        }
 
-  <!-- Політика конфіденційності -->
-  <div class="policy" id="policy-content">
-    <h2>Політика конфіденційності</h2>
-    <p>Ми, LuminousPulse, поважаємо вашу конфіденційність і не збираємо особисту інформацію без вашої згоди. На цьому сайті не здійснюється збереження особистих даних, окрім тих, які ви самостійно можете надати нам для контакту. Якщо ви маєте запитання щодо вашої конфіденційності, будь ласка, звертайтеся на <a href="mailto:ancrushagency@gmail.com">ancrushagency@gmail.com</a>.</p>
-    <p>Відвідуючи цей сайт, ви погоджуєтесь із цими умовами. Оновлення цієї політики можливе без попереднього повідомлення.</p>
-    <p><a href="#" onclick="showMain(event)">← Повернутись</a></p>
-  </div>
+        function showResults() {
+            // Process and log answers
+            console.log('Quiz answers:', quizAnswers);
+            
+            // Track Meta Pixel event for quiz completion
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'CompleteRegistration');
+            }
+            
+            // Hide current question and show results
+            document.getElementById('question3').classList.remove('active');
+            document.getElementById('quizResults').classList.add('active');
+        }
 
-  <!-- Умови використання -->
-  <div class="terms" id="terms-content">
-    <h2>Умови використання</h2>
-    <p>Вся інформація на цьому сайті надається лише з ознайомчою метою. Використовуючи сайт LuminousPulse, ви погоджуєтесь не здійснювати протиправних дій, не надавати неправдиву інформацію та не використовувати даний ресурс для цілей, що суперечать чинному законодавству.</p>
-    <p>Контактна пошта для зворотного звʼязку: <a href="mailto:ancrushagency@gmail.com">ancrushagency@gmail.com</a>.</p>
-    <p><a href="#" onclick="showMain(event)">← Повернутись</a></p>
-  </div>
+        function redirectToTelegram() {
+            // Track Meta Pixel event
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Contact');
+            }
+            
+            // Close quiz - the link will handle the redirect
+            closeQuiz();
+        }
 
-  <div class="footer">
-    &copy; 2025 LuminousPulse <br>
-    <a href="#" onclick="showPolicy(event)">Політика конфіденційності</a> |
-    <a href="#" onclick="showTerms(event)">Умови використання</a> <br>
-    Email: <a href="mailto:ancrushagency@gmail.com">ancrushagency@gmail.com</a>
-  </div>
+        // All CTA buttons now use onclick="openQuiz()" directly
+        // No need for additional event listeners
 
-  <script>
-    // Логіка кроків
-    function nextAge(val) {
-      document.getElementById("step-1").classList.add("hidden");
-      if (val === 0) {
-        document.getElementById("not18").classList.remove("hidden");
-      } else {
-        document.getElementById("step-2").classList.remove("hidden");
-      }
-    }
-    function nextDevice(val) {
-      document.getElementById("step-2").classList.add("hidden");
-      if (val === 0) {
-        document.getElementById("notDevice").classList.remove("hidden");
-      } else {
-        document.getElementById("step-3").classList.remove("hidden");
-      }
-    }
-    function nextShift(val) {
-      document.getElementById("step-3").classList.add("hidden");
-      if (val === 3) {
-        document.getElementById("notShift").classList.remove("hidden");
-      } else {
-        document.getElementById("final").classList.remove("hidden");
-      }
-    }
-    function toTelegram() {
-      // Meta Pixel кастомна подія для аналітики:
-      fbq('trackCustom', 'Click');
-      window.location.href = "https://t.me/ancrush_job_bot?start=688328a4c2b7602c560ccc3c"; // <-- Замініть на свій Telegram бот!
-    }
-
-    // Політика/умови
-    function showPolicy(e) {
-      e.preventDefault();
-      document.getElementById("main-content").style.display = "none";
-      document.getElementById("terms-content").style.display = "none";
-      document.getElementById("policy-content").style.display = "block";
-    }
-    function showTerms(e) {
-      e.preventDefault();
-      document.getElementById("main-content").style.display = "none";
-      document.getElementById("policy-content").style.display = "none";
-      document.getElementById("terms-content").style.display = "block";
-    }
-    function showMain(e) {
-      e.preventDefault();
-      document.getElementById("main-content").style.display = "block";
-      document.getElementById("policy-content").style.display = "none";
-      document.getElementById("terms-content").style.display = "none";
-    }
-  </script>
+        // Close quiz when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('quizModal');
+            if (event.target === modal) {
+                closeQuiz();
+            }
+        }
+    </script>
 </body>
 </html>
